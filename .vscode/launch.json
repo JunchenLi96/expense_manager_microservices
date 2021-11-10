@@ -2,10 +2,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": ".NET Core Launch (transaction)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ExpenseManagerTransactions/bin/Debug/netcoreapp3.1/ExpenseManagerTransactions.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ExpenseManagerTransactions",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
             // Use IntelliSense to find out which attributes exist for C# debugging
             // Use hover for the description of the existing attributes
             // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-            "name": ".NET Core Launch (web)",
+            "name": ".NET Core Launch (User)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
@@ -15,10 +32,7 @@
             "cwd": "${workspaceFolder}/ExpenseManagerUsers",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
-            "serverReadyAction": {
-                "action": "openExternally",
-                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
-            },
+            "console": "integratedTerminal",
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
