@@ -1,7 +1,7 @@
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace ExpenseManagerTransactions.DomainModels
+namespace ExpenseManagerDbContext
 {
     public class DbContext
     {

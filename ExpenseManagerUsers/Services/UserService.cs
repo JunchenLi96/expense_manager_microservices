@@ -1,6 +1,7 @@
 using System.Data;
 using System.Threading.Tasks;
 using Dapper;
+using ExpenseManagerDbContext;
 using ExpenseManagerUsers.DomainModels;
 using Microsoft.Extensions.Logging;
 

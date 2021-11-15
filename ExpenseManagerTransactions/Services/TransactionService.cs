@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using Dapper;
+using ExpenseManagerDbContext;
 using ExpenseManagerTransactions.DomainModels;
 using ExpenseManagerTransactions.Services;
 using Microsoft.Extensions.Logging;

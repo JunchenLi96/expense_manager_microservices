@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.Json.Serialization;
+using ExpenseManagerDbContext;
 using ExpenseManagerTransactions.Configurations;
-using ExpenseManagerTransactions.DomainModels;
 using ExpenseManagerTransactions.Service;
 using ExpenseManagerTransactions.Services;
 using ExpenseManagerUsers.Configurations;
