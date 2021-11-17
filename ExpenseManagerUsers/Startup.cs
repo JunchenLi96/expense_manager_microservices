@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ExpenseManagerDbContext;
+using ExpenseManagerDbContext.Configurations;
+using ExpenseManagerUsers.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace ExpenseManagerUsers
 {
@@ -26,6 +23,20 @@ namespace ExpenseManagerUsers
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Configure<DbConfig>(Configuration.GetSection("ConnectionStrings"));
+
+            services.AddSingleton<DbContext>(provider =>
+            {
+                string connectionString = provider.GetRequiredService<IOptions<DbConfig>>().Value.DefaultConnection;
+                return new DbContext(connectionString);
+            });
+
+            services.AddSingleton<IUserService, UserService>();
+
+            services.Configure<JwtConfig>(Configuration.GetSection("TokenOptions"));
+
+            services.AddSingleton<ITokenService, TokenService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
