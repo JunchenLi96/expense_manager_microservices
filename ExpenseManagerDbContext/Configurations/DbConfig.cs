@@ -1,4 +1,4 @@
-namespace ExpenseManagerTransactions.Configurations
+namespace ExpenseManagerDbContext.Configurations
 {
     public class DbConfig
     {

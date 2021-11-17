@@ -8,8 +8,8 @@ namespace ExpenseManagerTransactions.RequestModels
         [Required]
         public string Description { get; set; }
         [Required]
-        public decimal value { get; set; }
+        public decimal Value { get; set; }
         [Required]
-        public TransactionType type { get; set; }
+        public TransactionType Type { get; set; }
     }
 }

@@ -43,8 +43,8 @@ namespace ExpenseManagerTransactions.Configurations
             {
                 Description = transactionRequest.Description,
                 CreatedAt = DateTime.UtcNow.ToString(),
-                Type = transactionRequest.type,
-                Value = transactionRequest.value,
+                Type = transactionRequest.Type,
+                Value = transactionRequest.Value,
                 UserID = ClaimsExtensions.GetUserID(User)
             };
             Transaction transaction = await _transactionService.CreateNewTransaction(transactionToCreate);
@@ -58,8 +58,8 @@ namespace ExpenseManagerTransactions.Configurations
             {
                 Description = transactionRequest.Description,
                 UpdatedAt = DateTime.UtcNow.ToString(),
-                Type = transactionRequest.type,
-                Value = transactionRequest.value,
+                Type = transactionRequest.Type,
+                Value = transactionRequest.Value,
                 ID = Convert.ToInt32(ID),
                 UserID = ClaimsExtensions.GetUserID(User)
             };

@@ -1,6 +1,6 @@
 using System;
 
-namespace ExpenseManagerUsers.Configurations
+namespace ExpenseManagerDbContext.Configurations
 {
     public class JwtConfig
     {
@@ -8,4 +8,3 @@ namespace ExpenseManagerUsers.Configurations
         public TimeSpan ExpiresIn { get; set; }
     }
 }
-

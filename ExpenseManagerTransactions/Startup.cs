@@ -1,10 +1,9 @@
 using System.Text;
 using System.Text.Json.Serialization;
 using ExpenseManagerDbContext;
-using ExpenseManagerTransactions.Configurations;
+using ExpenseManagerDbContext.Configurations;
 using ExpenseManagerTransactions.Service;
 using ExpenseManagerTransactions.Services;
-using ExpenseManagerUsers.Configurations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -1,15 +1,12 @@
-using System.Text;
 using ExpenseManagerDbContext;
-using ExpenseManagerUsers.Configurations;
+using ExpenseManagerDbContext.Configurations;
 using ExpenseManagerUsers.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
 
 namespace ExpenseManagerUsers
 {
@@ -26,11 +23,11 @@ namespace ExpenseManagerUsers
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Configure<Dbconfig>(Configuration.GetSection("ConnectionStrings"));
+            services.Configure<DbConfig>(Configuration.GetSection("ConnectionStrings"));
 
             services.AddSingleton<DbContext>(provider =>
             {
-                string connectionString = provider.GetRequiredService<IOptions<Dbconfig>>().Value.DefaultConnection;
+                string connectionString = provider.GetRequiredService<IOptions<DbConfig>>().Value.DefaultConnection;
                 return new DbContext(connectionString);
             });
 
