@@ -1,14 +1,15 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": ".NET Core Launch (transaction)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ExpenseManagerTransactions/bin/Debug/netcoreapp3.1/ExpenseManagerTransactions.dll",
+            "program": "${workspaceFolder}/Transactions.api/bin/Debug/netcoreapp3.1/Transactions.api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ExpenseManagerTransactions",
+            "cwd": "${workspaceFolder}/Transactions.api",
             "stopAtEntry": false,
             "console": "integratedTerminal",
             "env": {
@@ -27,11 +28,28 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/ExpenseManagerUsers/bin/Debug/netcoreapp3.1/ExpenseManagerUsers.dll",
+            "program": "${workspaceFolder}/Users.api/bin/Debug/netcoreapp3.1/Users.api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ExpenseManagerUsers",
+            "cwd": "${workspaceFolder}/Users.api",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            "console": "integratedTerminal",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": ".NET Core Launch (consumer)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Transactions.Consumer/bin/Debug/netcoreapp3.1/Transactions.Consumer.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Transactions.Consumer",
+            "stopAtEntry": false,
             "console": "integratedTerminal",
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
